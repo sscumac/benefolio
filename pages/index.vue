@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>I am BENE !</h1>
+    <p class="m-10">Hallo! Schön, dass du da bist!</p>
   </div>
 </template>
 
