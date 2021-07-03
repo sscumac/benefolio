@@ -12,7 +12,7 @@
         p-3
       "
     >
-      <p>Benedikt Stoll</p>
+      <nuxt-link to="/">Benedikt Stoll</nuxt-link>
       <div class="tags flex w-7/12 justify-between">
         <p>Kritische Raumproduktion</p>
         <p>Spekulative Forschung</p>
@@ -32,8 +32,8 @@
         tags
       "
     >
-      <nuxt-link class="tags" to="/">Portfolio</nuxt-link>
-      <nuxt-link class="tags" to="/">Info</nuxt-link>
+      <nuxt-link class="tags" to="/portfolio">Portfolio</nuxt-link>
+      <nuxt-link class="tags" to="/info">Info</nuxt-link>
       <nuxt-link class="tags" to="/">ENG</nuxt-link>
     </div>
   </div>
