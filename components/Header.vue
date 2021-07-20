@@ -12,8 +12,9 @@
         p-3
       "
     >
-      <nuxt-link to="/">Benedikt Stoll</nuxt-link>
-      <div class="tags flex w-7/12 justify-between">
+      <div class="flex-grow"><nuxt-link to="/">Benedikt Stoll</nuxt-link></div>
+
+      <div class="tags pl-4 flex flex-col sm:flex-row text-xs md:text-base">
         <p>Kritische Raumproduktion</p>
         <p>Spekulative Forschung</p>
         <p>Performativer Urbanismus</p>
@@ -26,7 +27,8 @@
         items-center
         w-screen
         flex
-        justify-end
+        justify-around
+        xs:justify-end
         text-white
         p-3
         tags
@@ -41,6 +43,12 @@
 
 <style>
 .tags * {
-  padding: 0 10px;
+  padding: 4px 12px;
 }
+
+/*@media only screen and (max-width: 640px) {*/
+/*  .tags * {*/
+/*    max-width: min-content;*/
+/*  }*/
+/*}*/
 </style>

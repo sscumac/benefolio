@@ -6,10 +6,11 @@
         bg-light-blue
         items-center
         w-screen
-        flex
+        flex flex-col
+        xs:flex-row
         text-normal-black
         p-3
-        tags
+        footer-tags
       "
     >
       <a class="class" href="mailto:mail@studio.eu">mail@studio.eu</a>
@@ -19,6 +20,7 @@
     <!--    bottom-->
     <div
       class="
+        text-xs
         bg-normal-black
         items-center
         w-screen
@@ -26,7 +28,8 @@
         justify-center
         text-white
         p-3
-        tags
+        text-center
+        md:text-base
       "
     >
       <p>
@@ -36,9 +39,8 @@
     </div>
   </div>
 </template>
-
 <style>
-.tags * {
-  padding: 0 10px;
+.footer-tags * {
+  padding: 4px 16px;
 }
 </style>

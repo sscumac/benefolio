@@ -8,6 +8,9 @@ module.exports = {
         'light-blue': '#017EB3',
         'soft-blue': '#ecf8fd',
       },
+      screens: {
+        xs: '391px',
+      },
     },
     variants: {
       extend: {},
