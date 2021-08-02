@@ -23,7 +23,7 @@
     <!--    bottom-->
     <div
       class="
-        bg-light-blue
+        text-normal-black
         items-center
         w-screen
         flex
@@ -33,10 +33,11 @@
         p-3
         tags
       "
+      :class="frameColor($route.name)"
     >
       <nuxt-link class="tags" to="/portfolio">Portfolio</nuxt-link>
       <nuxt-link class="tags" to="/info">Info</nuxt-link>
-      <nuxt-link class="tags" to="/">ENG</nuxt-link>
+      <nuxt-link class="tags" to="/comingsoon">ENG</nuxt-link>
     </div>
   </div>
 </template>
@@ -45,10 +46,14 @@
 .tags * {
   padding: 4px 12px;
 }
-
-/*@media only screen and (max-width: 640px) {*/
-/*  .tags * {*/
-/*    max-width: min-content;*/
-/*  }*/
-/*}*/
 </style>
+<script>
+import utils from '../utils/utils'
+export default {
+  methods: {
+    frameColor(route) {
+      return utils.frameColor(route)
+    },
+  },
+}
+</script>
