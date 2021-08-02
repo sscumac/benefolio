@@ -3,7 +3,6 @@
     <!--  top-->
     <div
       class="
-        bg-light-blue
         items-center
         w-screen
         flex flex-col
@@ -12,6 +11,7 @@
         p-3
         footer-tags
       "
+      :class="frameColor($route.name)"
     >
       <a class="class" href="mailto:mail@studio.eu">mail@studio.eu</a>
       <nuxt-link to="/impressum">Impressum</nuxt-link>
@@ -39,6 +39,16 @@
     </div>
   </div>
 </template>
+<script>
+import utils from '../utils/utils'
+export default {
+  methods: {
+    frameColor(route) {
+      return utils.frameColor(route)
+    },
+  },
+}
+</script>
 <style>
 .footer-tags * {
   padding: 4px 16px;
