@@ -3,7 +3,7 @@
     <div class="flex">
       <div class="mx-auto"></div>
       <div class="w-1/2 flex flex-col lg:ml-20">
-        <h1 class="font-bold mb-4">Impressum</h1>
+        <h1 class="font-bold mb-4">Impressum_beta</h1>
         <p>
           El moluptat qui aspist ut fugias nemquo maio. Neque quo mosae nobist
           auditatio eliquam quia quia doluptate volles- tiam, conserem. Ut utem
