@@ -6,3 +6,11 @@ h1 {
 .container {
   padding: 100px 5%;
 }
+
+@font-face {
+  font-family: 'Minion Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Minion_Web_Pro_Regular.ttf') format('truetype');
+}

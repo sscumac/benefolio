@@ -5,6 +5,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        minion: ['Minion Pro', 'regular'],
+      },
       colors: {
         'normal-black': '#222222',
         'light-blue': '#017EB3',
