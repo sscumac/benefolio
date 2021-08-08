@@ -33,15 +33,7 @@
         p-3
         tags
       "
-      :class="
-        route === 'Portfolio'
-          ? 'bg-bright-yellow'
-          : route === 'Info'
-          ? 'bg-medium-green'
-          : route === 'Impressum' || route === 'Datenschutz'
-          ? 'bg-darkish-pink'
-          : 'bg-light-blue'
-      "
+      :class="frameColor($route.name)"
     >
       <nuxt-link class="tags" to="/portfolio">Portfolio</nuxt-link>
       <nuxt-link class="tags" to="/info">Info</nuxt-link>
