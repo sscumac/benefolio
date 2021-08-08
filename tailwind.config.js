@@ -1,6 +1,6 @@
 module.exports = {
   purge: {
-    // safelist: ['bg-medium-green'],
+    safelist: ['bg-medium-green'],
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
