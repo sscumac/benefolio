@@ -1,6 +1,6 @@
 module.exports = {
   purge: {
-    content: ['./**/*.js'],
+    content: ['./**/*.js', './**/*.vue', './**/*.html'],
     safelist: ['bg-medium-green'],
   },
   darkMode: false, // or 'media' or 'class'
