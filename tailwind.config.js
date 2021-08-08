@@ -1,10 +1,6 @@
 module.exports = {
   purge: {
-    content: [
-      './benefolio/**/*.js',
-      './benefolio/**/*.vue',
-      './benefolio/**/*.html',
-    ],
+    content: ['./utils/utils.js', './components/**/*.vue', './pages/**/*.vue'],
     safelist: ['bg-medium-green'],
   },
   darkMode: false, // or 'media' or 'class'
