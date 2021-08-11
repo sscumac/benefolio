@@ -14,7 +14,16 @@
     >
       <div class="flex-grow"><nuxt-link to="/">Benedikt Stoll</nuxt-link></div>
 
-      <div class="tags pl-4 flex flex-col sm:flex-row text-xs md:text-base">
+      <div
+        class="
+          tags
+          pl-4
+          flex flex-col
+          sm:flex-row sm:items-center
+          text-xs
+          md:text-base
+        "
+      >
         <p>Kritische Raumproduktion</p>
         <p>Spekulative Forschung</p>
         <p>Performativer Urbanismus</p>

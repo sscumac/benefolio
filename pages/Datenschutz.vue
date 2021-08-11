@@ -2,7 +2,7 @@
   <div class="container flex max-w-full">
     <div class="flex w-full">
       <div class="hidden mx-auto lg:block" />
-      <div class="lg:w-1/2 flex flex-col lg:ml-20">
+      <div class="datenschutz lg:w-1/2 flex flex-col lg:ml-20">
         <h1 class="font-bold mb-4">Datenschutz</h1>
         <p>
           Name und Kontakt des Verantwortlichen gemäß Artikel 4 Abs. 7 DSGVO
@@ -175,7 +175,7 @@
   </div>
 </template>
 <style>
-p,
+.datenschutz p,
 h6 {
   margin-top: 1rem;
 }

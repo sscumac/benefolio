@@ -2,11 +2,13 @@
   <div class="container flex max-w-full">
     <div class="flex w-full">
       <div class="hidden mx-auto lg:block" />
-      <div class="lg:w-1/2 flex flex-col lg:ml-20">
+      <div class="impressum lg:w-1/2 flex flex-col lg:ml-20">
         <h1 class="font-bold mb-4">Impressum</h1>
         <p>
           Herausgeber und Autor der Website: Benedikt Stoll <br />
-          Code: Sebastian Schumacher
+          <a class="class" href="mailto:sebastian.schumacher@hotmail.de"
+            >Code: Sebastian Schumacher</a
+          >
         </p>
         <p>
           Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit,
@@ -80,7 +82,7 @@
   </div>
 </template>
 <style>
-p {
+.impressum p {
   margin-top: 1rem;
 }
 </style>
