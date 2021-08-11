@@ -36,8 +36,7 @@
         items-center
         w-screen
         flex
-        justify-around
-        xs:justify-end
+        justify-end
         text-white
         p-3
         tags
@@ -52,7 +51,9 @@
           : 'bg-light-blue'
       "
     >
-      <nuxt-link class="tags" to="/portfolio">Portfolio</nuxt-link>
+      <div v-if="$route.name != 'Portfolio'">
+        <nuxt-link class="tags" to="/portfolio">Portfolio</nuxt-link>
+      </div>
       <nuxt-link class="tags" to="/info">Info</nuxt-link>
       <nuxt-link class="tags" to="/comingsoon">ENG</nuxt-link>
     </div>
