@@ -1,8 +1,8 @@
 <template>
   <div class="container flex max-w-full">
     <div class="flex w-full">
-      <div class="mx-auto" />
-      <div class="w-1/2 flex flex-col lg:ml-20">
+      <div class="hidden mx-auto lg:block" />
+      <div class="lg:w-1/2 flex flex-col lg:ml-20">
         <h1 class="font-bold mb-4">Impressum</h1>
         <p>
           Herausgeber und Autor der Website: Benedikt Stoll <br />
