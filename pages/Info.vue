@@ -2,12 +2,9 @@
   <div class="container flex justify-center max-w-full">
     <div class="flex flex-col max-w-screen-xl lg:flex-row">
       <div class="portrait mb-12 lg:mb-8 w-1/2 mx-auto lg:w-auto">
-        <img
-          src="~/assets/img/Portrait Benedikt Stoll cropped, Credits_Simon Oh.jpg"
-          alt=""
-        />
+        <PictureElement path="portrait_small.jpg" width="756px" />
       </div>
-      <div class="flex flex-col lg:ml-20">
+      <div class="flex flex-col lg:w-1/2 lg:ml-20">
         <h1 class="font-bold mb-4">Info</h1>
         <p>
           El moluptat qui aspist ut fugias nemquo maio. Neque quo mosae nobist
@@ -36,3 +33,9 @@
   min-width: 250px;
 }
 </style>
+<script>
+import PictureElement from '../components/PictureElement'
+export default {
+  components: { PictureElement },
+}
+</script>
