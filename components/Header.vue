@@ -42,7 +42,7 @@
         tags
       "
       :class="
-        $route.name === 'Portfolio'
+        $route.name.includes('portfolio')
           ? 'bg-bright-yellow'
           : $route.name === 'Info'
           ? 'bg-medium-green'
@@ -51,7 +51,7 @@
           : 'bg-light-blue'
       "
     >
-      <div v-if="$route.name != 'Portfolio'">
+      <div v-if="$route.name != 'portfolio'">
         <nuxt-link class="tags" to="/portfolio">Portfolio</nuxt-link>
       </div>
       <nuxt-link class="tags" to="/info">Info</nuxt-link>

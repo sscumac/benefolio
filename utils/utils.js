@@ -1,6 +1,6 @@
 export default {
   frameColor(route) {
-    return route === 'Portfolio'
+    return route.includes('portfolio')
       ? 'bg-bright-yellow'
       : route === 'Info'
       ? 'bg-medium-green'
