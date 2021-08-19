@@ -6,6 +6,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      gridTemplateColumns: {
+        '200-auto-fit': 'repeat(auto-fit, minmax(200px, 220px))',
+        '200-auto-fill': 'repeat(auto-fill, minmax(200px, 1fr))',
+      },
       fontFamily: {
         minion: ['Minion Pro', 'regular'],
       },
@@ -19,6 +23,7 @@ module.exports = {
       },
       screens: {
         xs: '391px',
+        '2-col': '400px',
       },
     },
     variants: {
