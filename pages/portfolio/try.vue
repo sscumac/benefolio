@@ -2,11 +2,7 @@
   <div class="container max-w-screen-2xl mx-auto">
     <div class="grid gap-10 sm:gap-32">
       <div v-for="index in 10" :key="index" class="grid-item">
-        <div
-          ref="gallery-item"
-          class="inner h-full w-full"
-          @click="rotate($event)"
-        >
+        <div ref="gallery-item" class="inner h-full w-full">
           {{ index }}
         </div>
       </div>
@@ -15,10 +11,20 @@
 </template>
 <script>
 export default {
+  mounted() {
+    document.addEventListener('scroll', this.rotate)
+  },
   methods: {
     rotate(event) {
-      console.log(event.target)
-      event.target.style.transform = 'rotate(+45deg)'
+      console.log(window.pageYOffset)
+      this.$refs['gallery-item'].forEach(function (item, index) {
+        if (index % 2 === 0) {
+          // console.log(index)
+          item.style.transform = `rotate(${window.pageYOffset / 50}deg)`
+        } else {
+          item.style.transform = `rotate(-${window.pageYOffset / 50}deg)`
+        }
+      })
     },
   },
 }
