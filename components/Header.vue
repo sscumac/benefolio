@@ -42,7 +42,7 @@
         tags
       "
       :class="
-        $route.name.includes('portfolio')
+        $route.name === 'portfolio' || $route.name.includes('portfolio')
           ? 'bg-bright-yellow'
           : $route.name === 'Info'
           ? 'bg-medium-green'
