@@ -10,21 +10,14 @@
   </div>
 </template>
 <script>
+import utils from '../../utils/utils'
 export default {
   mounted() {
     document.addEventListener('scroll', this.rotate)
   },
   methods: {
     rotate(event) {
-      console.log(window.pageYOffset)
-      this.$refs['gallery-item'].forEach(function (item, index) {
-        if (index % 2 === 0) {
-          // console.log(index)
-          item.style.transform = `rotate(${window.pageYOffset / 50}deg)`
-        } else {
-          item.style.transform = `rotate(-${window.pageYOffset / 50}deg)`
-        }
-      })
+      utils.rotate(event, this.$refs['gallery-item'])
     },
   },
 }
@@ -47,14 +40,18 @@ export default {
   background-repeat: no-repeat;
 }
 
-.grid > .grid-item:nth-child(3n) {
-  grid-column: span 2;
-  grid-row: span 2;
-}
+/*.grid > .grid-item:nth-child(3n) {*/
+/*  grid-column: span 2;*/
+/*  grid-row: span 2;*/
+/*}*/
 
-.grid > .grid-item:nth-child(4n) {
-  transform: rotate(45deg);
-}
+/*.grid > .grid-item:nth-child(4n) {*/
+/*  transform: rotate(15deg);*/
+/*}*/
+
+/*.grid > .grid-item:nth-child(3n) {*/
+/*  transform: rotate(-15deg);*/
+/*}*/
 
 @media screen and (max-width: 485px) {
   .grid > .grid-item:nth-child(3n) {
