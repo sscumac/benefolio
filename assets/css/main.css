@@ -4,7 +4,8 @@ h1 {
 }
 
 .container {
-  padding: 100px 5%;
+  flex-grow: 1;
+  padding: 20px;
 }
 
 @font-face {

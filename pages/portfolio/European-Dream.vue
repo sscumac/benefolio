@@ -1,6 +1,8 @@
 <template>
-  <div class="container flex justify-center max-w-full">
-    <div class="flex flex-col-reverse max-w-screen-xl lg:flex-row">
+  <div class="container flex flex-grow justify-center max-w-full">
+    <div
+      class="mb-20 flex flex-col-reverse mx-auto max-w-screen-xl lg:flex-row"
+    >
       <div class="portrait mb-12 lg:mb-8 w-1/2 mx-auto lg:w-auto">
         <PictureElement
           path="european-dream/the_european_dream.png"
@@ -67,3 +69,8 @@ export default {
   components: { PictureElement },
 }
 </script>
+<style>
+body {
+  overflow-x: hidden;
+}
+</style>
