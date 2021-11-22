@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col min-h-screen relative">
+  <div class="flex flex-col min-h-screen">
     <Header />
-    <Nuxt class="flex-grow" />
+    <Nuxt />
     <Footer />
   </div>
 </template>
@@ -13,4 +13,3 @@ export default {
   components: { Footer, Header },
 }
 </script>
-^

@@ -1,8 +1,7 @@
 <template>
-  <div class="container max-w-screen-2xl mx-auto">
+  <div id="" class="mx-auto flex-grow">
     <p class="my-10 font-minion lg:text-2xl">Hallo! Schön, dass du da bist!</p>
 
-    <!--    gallery-->
     <div class="flex flex-wrap gap-10">
       <div
         v-for="(image, index) in images"
@@ -22,11 +21,11 @@
 </template>
 <script>
 // import PictureElement from '../components/PictureElement'
-import PictureElement from '../components/PictureElement'
+
 import utils from '../utils/utils'
 
 export default {
-  components: { PictureElement },
+  // components: { PictureElement },
   data() {
     return {
       images: [
@@ -65,11 +64,6 @@ export default {
       ],
     }
   },
-  // components: { PictureElement },
-  mounted() {
-    console.log(this.$route.name)
-    document.addEventListener('scroll', this.rotate)
-  },
   methods: {
     rotate(event) {
       utils.rotate(event, this.$refs['grid-item'])
@@ -78,6 +72,18 @@ export default {
 }
 </script>
 <style>
+.item {
+  min-width: 800px;
+}
+
+#textContainer {
+  width: 90%;
+}
+
+#content {
+  width: 1000vw;
+}
+
 /*.gallery {*/
 /*  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));*/
 /*  align-items: center;*/
