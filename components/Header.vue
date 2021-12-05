@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="max-w-screen">
     <!--  top-->
     <div
       class="
@@ -60,11 +60,6 @@
   </div>
 </template>
 
-<style>
-.tags * {
-  padding: 4px 12px;
-}
-</style>
 <script>
 import utils from '../utils/utils'
 export default {
@@ -75,3 +70,8 @@ export default {
   },
 }
 </script>
+<style>
+.tags * {
+  padding: 4px 12px;
+}
+</style>

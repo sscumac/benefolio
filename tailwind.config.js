@@ -6,6 +6,23 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      spacing: {
+        '1/20': '5%',
+        '7px': '9px',
+        '1/10': '10%',
+        '1/6': '16.66%',
+        '1/5': '20%',
+        '1/3': '33.33%',
+        '2/5': '40%',
+        '9/20': '45%',
+        '1/2': '50%',
+        '2/3': '66.66%',
+        '1/4': '25%',
+        '3/4': '75%',
+        '4/5': '80%',
+        '9/10': '90%',
+        full: '100%',
+      },
       gridTemplateColumns: {
         '200-auto-fit': 'repeat(auto-fit, minmax(200px, 220px))',
         '200-auto-fill': 'repeat(auto-fill, minmax(200px, 1fr))',
