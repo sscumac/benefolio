@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="absolute bottom-0">
     <!--  top-->
     <div
       class="
         items-center
         w-screen
-        flex flex-col
+        flex
         xs:flex-row
         text-normal-black
         py-1

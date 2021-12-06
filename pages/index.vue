@@ -4,14 +4,14 @@
       id="slideContainer"
       class="flex-grow overflow-x-scroll flex flex-col justify-center"
     >
-      <div id="slider" class="flex">
+      <div id="slider" class="flex" style="max-height: 75vh">
         <div
           v-for="image in images"
           :key="image.name"
-          class="flex flex-col mx-6 mb-4"
+          class="flex flex-col ml-10 mr-40 lg:mx-40 mb-4"
           :class="randomFlexPosition()"
         >
-          <nuxt-link class="mr-60 2xl:w-80" :to="`/portfolio/${image.name}`">
+          <nuxt-link class="relative 2xl:w-80" :to="`/portfolio/${image.name}`">
             <img
               :src="require(`~/assets/img/${image.file}`)"
               alt="image.name"
@@ -21,10 +21,22 @@
               class="mb-2"
               :style="rotateImg()"
             />
+            <div
+              class="
+                absolute
+                top-1/2
+                left-1/2
+                transform
+                -translate-x-1/2
+                bg-white
+                text-center
+                whitespace-nowrap
+              "
+              style="width: 120%"
+            >
+              {{ image.title }}
+            </div>
           </nuxt-link>
-          <div class="font-bold my-2">{{ image.name }}</div>
-          <div class="">{{ image.excerpt }}</div>
-          <div class="mt-1">Jahr: {{ image.year }}</div>
         </div>
       </div>
     </div>
@@ -40,6 +52,7 @@ export default {
         {
           file: 'vimeo_metrozones.png',
           name: 'mapping-performance&performativity',
+          title: 'Mapping, Performance & Performativity',
           excerpt:
             'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
           year: 2012,
@@ -47,6 +60,7 @@ export default {
         {
           file: 'IMG_20190113_141422.jpg',
           name: 'San-Rocco',
+          title: 'San Rocco',
           excerpt:
             'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
           year: 2012,
@@ -54,12 +68,14 @@ export default {
         {
           file: 'IMG_20190113_123125.jpg',
           name: 'schuppen',
+          title: 'Schuppen',
           excerpt: 'Umbau eines ehemaligen Hühnerstalls und Geräteschuppen',
           year: 2012,
         },
         {
           file: 'IMG_20181227_130937.jpg',
           name: 'grenzen-ziehen',
+          title: 'Grenzen ziehen',
           excerpt:
             'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
           year: 2012,
@@ -67,6 +83,7 @@ export default {
         {
           file: 'image-202105160812.jpeg',
           name: 'trauma-rassismus',
+          title: 'Trauma Rassismus',
           excerpt:
             'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
           year: 2012,
@@ -74,6 +91,7 @@ export default {
         {
           file: 'GA_Schuppen.JPG',
           name: 'schuppen',
+          title: 'Schuppen',
           excerpt:
             'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
           year: 2012,
@@ -81,6 +99,7 @@ export default {
         {
           file: 'the_european_dream.png',
           name: 'European-Dream',
+          title: '{THE EUROPEAN DREAM}',
           excerpt:
             'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
           year: 2012,
@@ -88,6 +107,7 @@ export default {
         {
           file: 'DRAWINGS05-Highrise of Homes 1_0.jpg',
           name: 'Highrise-of-Homes-2.0',
+          title: 'Highrise of Homes 2.0',
           excerpt:
             'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
           year: 2012,
