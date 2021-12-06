@@ -8,14 +8,16 @@
         flex flex-col
         xs:flex-row
         text-normal-black
-        p-3
+        py-1
         footer-tags
       "
       :class="frameColor($route.name)"
     >
-      <a class="class" href="mailto:mail@studio.eu">mail@studio.eu</a>
-      <nuxt-link to="/impressum">Impressum</nuxt-link>
-      <nuxt-link to="/datenschutz">Datenschutz</nuxt-link>
+      <div>
+        <a class="tag" href="mailto:mail@studio.eu">mail@studio.eu</a>
+        <nuxt-link class="tag" to="/impressum">Impressum</nuxt-link>
+        <nuxt-link class="tag" to="/datenschutz">Datenschutz</nuxt-link>
+      </div>
     </div>
     <!--    bottom-->
     <div
@@ -27,7 +29,7 @@
         flex
         justify-center
         text-white
-        p-3
+        py-1
         text-center
         md:text-base
       "
@@ -51,6 +53,6 @@ export default {
 </script>
 <style>
 .footer-tags * {
-  padding: 4px 16px;
+  margin: 0 16px;
 }
 </style>

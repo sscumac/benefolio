@@ -9,14 +9,16 @@
         flex
         justify-between
         text-white
-        p-3
+        py-1
       "
     >
-      <div class="flex-grow"><nuxt-link to="/">Benedikt Stoll</nuxt-link></div>
+      <div class="flex-grow">
+        <nuxt-link class="tag ml-3" to="/">Benedikt Stoll</nuxt-link>
+      </div>
 
       <div
         class="
-          tags
+          labels
           pl-4
           flex flex-col
           sm:flex-row sm:items-center
@@ -38,7 +40,7 @@
         flex
         justify-end
         text-white
-        p-3
+        py-1
         tags
       "
       :class="
@@ -51,11 +53,13 @@
           : 'bg-light-blue'
       "
     >
-      <div v-if="$route.name != 'portfolio'">
-        <nuxt-link class="tags" to="/portfolio">Portfolio</nuxt-link>
+      <div v-if="$route.name !== 'portfolio'">
+        <nuxt-link class="tag" to="/portfolio">Portfolio</nuxt-link>
       </div>
-      <nuxt-link class="tags" to="/info">Info</nuxt-link>
-      <nuxt-link class="tags" to="/comingsoon">ENG</nuxt-link>
+      <div>
+        <nuxt-link class="tag" to="/info">Info</nuxt-link>
+        <nuxt-link class="tag" to="/comingsoon">ENG</nuxt-link>
+      </div>
     </div>
   </div>
 </template>
@@ -71,7 +75,13 @@ export default {
 }
 </script>
 <style>
-.tags * {
-  padding: 4px 12px;
+.tag:hover {
+  border-bottom: solid 2px;
+}
+.tag {
+  margin: 0 12px;
+}
+.labels * {
+  margin: 0 12px;
 }
 </style>
