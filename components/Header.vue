@@ -9,7 +9,9 @@
         flex
         justify-between
         text-white
-        py-1
+        py-2
+        px-2
+        lg:py-4
       "
     >
       <div class="flex-grow">
@@ -40,7 +42,9 @@
         flex
         justify-end
         text-white
-        py-1
+        px-2
+        py-2
+        lg:py-4
         tags
       "
       :class="
@@ -53,8 +57,8 @@
           : 'bg-light-blue'
       "
     >
-      <div v-if="$route.name !== 'portfolio'">
-        <nuxt-link class="tag" to="/portfolio">Portfolio</nuxt-link>
+      <div v-if="$route.name !== 'kontakt'">
+        <nuxt-link class="tag" to="/kontakt">Kontakt</nuxt-link>
       </div>
       <div>
         <nuxt-link class="tag" to="/info">Info</nuxt-link>

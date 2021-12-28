@@ -1,14 +1,18 @@
 <template>
-  <div class="flex-grow flex flex-col" @wheel="horizontalScroll">
+  <div
+    class="flex-grow flex flex-col"
+    style="scroll-behavior: smooth"
+    @wheel="horizontalScroll($event, true)"
+  >
     <div
       id="slideContainer"
       class="flex-grow overflow-x-scroll flex flex-col justify-center"
     >
-      <div id="slider" class="flex" style="max-height: 75vh">
+      <div id="slider" class="flex transform -translate-x-16 md:translate-x-0">
         <div
           v-for="image in images"
           :key="image.name"
-          class="flex flex-col ml-10 mr-40 lg:mx-40 mb-4"
+          class="flex flex-col mx-24 mb-4 h-3/4 2xl:h-full py-20"
           :class="randomFlexPosition()"
         >
           <nuxt-link class="relative 2xl:w-80" :to="`/portfolio/${image.name}`">
@@ -17,10 +21,11 @@
               alt="image.name"
               loading="lazy"
               width="600"
-              height="400"
+              height="800"
               class="mb-2"
               :style="rotateImg()"
             />
+            <!--            Title on picture -->
             <div
               class="
                 absolute
@@ -43,7 +48,7 @@
   </div>
 </template>
 <script>
-// import PictureElement from '../components/PictureElement'
+import Utils from '../utils/utils'
 export default {
   // components: { PictureElement },
   data() {
@@ -116,9 +121,8 @@ export default {
     }
   },
   methods: {
-    horizontalScroll(event) {
-      const delta = Math.max(-1, Math.min(1, event.wheelDelta))
-      document.getElementById('slideContainer').scrollLeft -= delta * 50
+    horizontalScroll(event, bounceEffect) {
+      Utils.horizontalScroll(event, bounceEffect)
     },
     rotateImg() {
       let index = Math.round(Math.floor(Math.random() * 30))
