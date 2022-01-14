@@ -4,12 +4,16 @@
     style="scroll-behavior: smooth"
     @wheel="horizontalScroll($event, true)"
   >
+    <!--  >-->
     <div
       id="slideContainer"
-      class="flex-grow overflow-x-scroll flex flex-col justify-center"
+      class="flex-grow sm:overflow-x-scroll flex flex-col justify-center"
     >
-      <div id="slider" class="flex justify-start transform py-10">
-        <div class="portrait mb-12 lg:mb-8">
+      <div
+        id="slider"
+        class="flex flex-col sm:flex-row justify-start transform p-10"
+      >
+        <div class="portrait mx-auto mb-12 lg:mb-8">
           <PictureElement path="portrait_small.jpg" width="auto" />
         </div>
         <!--        info-->
@@ -121,27 +125,32 @@ export default {
   },
   methods: {
     horizontalScroll(event, bounceEffect) {
-      Utils.horizontalScroll(event, bounceEffect)
+      if (window.screen.width > 500) {
+        Utils.horizontalScroll(event, bounceEffect)
+      }
     },
   },
 }
 </script>
-<style>
+<style scoped>
 #slider {
-  width: 250em;
-  /*height: 66vh;*/
+  width: 100vw;
 }
-.text-box {
-  width: 40em;
-  margin-right: 5em;
+@media (min-width: 640px) {
+  #slider {
+    width: 250em;
+    /*height: 66vh;*/
+  }
+  .text-box {
+    width: 40em;
+    margin-right: 5em;
+  }
 }
+
 .impressum p {
   margin-top: 1rem;
 }
 .img-wrapper {
   height: fit-content;
-}
-body {
-  overflow-y: hidden;
 }
 </style>

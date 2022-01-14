@@ -6,9 +6,12 @@
   >
     <div
       id="slideContainer"
-      class="flex-grow overflow-x-scroll flex flex-col justify-center"
+      class="flex-grow sm:overflow-x-scroll flex flex-col justify-center"
     >
-      <div id="slider" class="flex transform -translate-x-16 md:translate-x-0">
+      <div
+        id="slider"
+        class="flex flex-col sm:flex-row sm:transform -translate-x-16 md:translate-x-0"
+      >
         <div
           v-for="image in images"
           :key="image.name"
@@ -27,16 +30,7 @@
             />
             <!--            Title on picture -->
             <div
-              class="
-                absolute
-                top-1/2
-                left-1/2
-                transform
-                -translate-x-1/2
-                bg-white
-                text-center
-                whitespace-nowrap
-              "
+              class="absolute top-1/2 left-1/2 transform -translate-x-1/2 bg-white text-center whitespace-nowrap"
               style="width: 120%"
             >
               {{ image.title }}
@@ -122,7 +116,9 @@ export default {
   },
   methods: {
     horizontalScroll(event, bounceEffect) {
-      Utils.horizontalScroll(event, bounceEffect)
+      if (window.screen.width > 500) {
+        Utils.horizontalScroll(event, bounceEffect)
+      }
     },
     rotateImg() {
       let index = Math.round(Math.floor(Math.random() * 30))
@@ -148,14 +144,21 @@ export default {
   },
 }
 </script>
-<style>
+<style scoped>
 #slider {
-  width: 250em;
+  width: 100vw;
+}
+@media (min-width: 640px) {
+  #slider {
+    width: 250em;
+    /*height: 66vh;*/
+  }
+  .text-box {
+    width: 40em;
+    margin-right: 5em;
+  }
 }
 .img-wrapper {
   height: fit-content;
-}
-body {
-  overflow-y: hidden;
 }
 </style>
