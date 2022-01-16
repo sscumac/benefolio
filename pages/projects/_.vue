@@ -45,7 +45,7 @@
         <div
           v-for="(image, index) in projectData.images"
           :key="index"
-          class="flex flex-col mx-24 mb-4 h-3/4 2xl:h-full py-20 transform scale-150 sm:scale-100 sm:py-0"
+          class="flex flex-col mx-16 xs:mx-20 mb-4 h-3/4 2xl:h-full py-20 transform scale-150 sm:scale-100 sm:py-0"
           :class="randomFlexPosition()"
         >
           <img
