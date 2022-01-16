@@ -2,31 +2,14 @@
   <div class="max-w-screen">
     <!--  top-->
     <div
-      class="
-        bg-normal-black
-        items-center
-        w-screen
-        flex
-        justify-between
-        text-white
-        py-2
-        px-2
-        lg:py-4
-      "
+      class="bg-normal-black items-center w-screen flex justify-between text-white py-2 px-2"
     >
       <div class="flex-grow">
         <nuxt-link class="tag ml-3" to="/">Benedikt Stoll</nuxt-link>
       </div>
 
       <div
-        class="
-          labels
-          pl-4
-          flex flex-col
-          sm:flex-row sm:items-center
-          text-xs
-          md:text-base
-        "
+        class="labels pl-4 flex flex-col sm:flex-row sm:items-center text-xs md:text-base"
       >
         <p>Kritische Raumproduktion</p>
         <p>Spekulative Forschung</p>
@@ -35,18 +18,7 @@
     </div>
     <!--    bottom-->
     <div
-      class="
-        text-normal-black
-        items-center
-        w-screen
-        flex
-        justify-end
-        text-white
-        px-2
-        py-2
-        lg:py-4
-        tags
-      "
+      class="text-normal-black items-center w-screen flex justify-end text-white px-2 py-2 tags"
       :class="
         $route.name === 'portfolio' || $route.name.includes('portfolio')
           ? 'bg-bright-yellow'

@@ -1,3 +1,10 @@
+import projectsData from './static/projectsData.json'
+const dynamicRoutes = () => {
+  return new Promise((resolve) => {
+    resolve(projectsData.map((project) => `projects/${project.name}`))
+  })
+}
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -38,6 +45,10 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
+
+  generate: {
+    routes: dynamicRoutes,
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

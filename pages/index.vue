@@ -18,7 +18,7 @@
           class="flex flex-col mx-24 mb-4 h-3/4 2xl:h-full py-20"
           :class="randomFlexPosition()"
         >
-          <nuxt-link class="relative 2xl:w-80" :to="`/portfolio/${image.name}`">
+          <nuxt-link class="relative 2xl:w-80" :to="`/projects/${image.name}`">
             <img
               :src="require(`~/assets/img/${image.file}`)"
               alt="image.name"
@@ -57,7 +57,7 @@ export default {
           year: 2012,
         },
         {
-          file: 'IMG_20190113_141422.jpg',
+          file: 'schuppen/IMG_20190113_141422.jpg',
           name: 'San-Rocco',
           title: 'San Rocco',
           excerpt:
@@ -65,14 +65,14 @@ export default {
           year: 2012,
         },
         {
-          file: 'IMG_20190113_123125.jpg',
+          file: 'schuppen/IMG_20190113_123125.jpg',
           name: 'schuppen',
           title: 'Schuppen',
           excerpt: 'Umbau eines ehemaligen Hühnerstalls und Geräteschuppen',
           year: 2012,
         },
         {
-          file: 'IMG_20181227_130937.jpg',
+          file: 'schuppen/IMG_20181227_130937.jpg',
           name: 'grenzen-ziehen',
           title: 'Grenzen ziehen',
           excerpt:
@@ -88,7 +88,7 @@ export default {
           year: 2012,
         },
         {
-          file: 'GA_Schuppen.JPG',
+          file: 'schuppen/GA_Schuppen.JPG',
           name: 'schuppen',
           title: 'Schuppen',
           excerpt:
@@ -97,7 +97,7 @@ export default {
         },
         {
           file: 'the_european_dream.png',
-          name: 'European-Dream',
+          name: 'european-dream',
           title: '{THE EUROPEAN DREAM}',
           excerpt:
             'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
@@ -121,25 +121,10 @@ export default {
       }
     },
     rotateImg() {
-      let index = Math.round(Math.floor(Math.random() * 30))
-      index = index < 16 ? (index / 2) * -1 : index / 2
-      return `transform: rotate(${index}deg)`
+      return Utils.rotateImg()
     },
     randomFlexPosition() {
-      let pos = ''
-      const index = Math.floor(Math.random() * 3)
-      switch (index) {
-        case 0:
-          pos = 'justify-start'
-          break
-        case 1:
-          pos = 'justify-center'
-          break
-        case 2:
-          pos = 'justify-end'
-          break
-      }
-      return pos
+      Utils.randomFlexPosition()
     },
   },
 }
