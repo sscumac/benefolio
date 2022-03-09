@@ -15,7 +15,7 @@
         <div
           v-for="image in images"
           :key="image.name"
-          class="flex flex-col mx-24 mb-4 h-3/4 2xl:h-full py-20"
+          class="flex flex-col mx-24 mb-4 h-3/4 2xl:h-full py-20 border-r border-l"
           :class="randomFlexPosition()"
         >
           <nuxt-link class="relative 2xl:w-80" :to="`/projects/${image.name}`">
@@ -75,14 +75,6 @@ export default {
           file: 'schuppen/IMG_20181227_130937.jpg',
           name: 'grenzen-ziehen',
           title: 'Grenzen ziehen',
-          excerpt:
-            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
-          year: 2012,
-        },
-        {
-          file: 'image-202105160812.jpeg',
-          name: 'trauma-rassismus',
-          title: 'Trauma Rassismus',
           excerpt:
             'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
           year: 2012,

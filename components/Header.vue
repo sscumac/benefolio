@@ -11,9 +11,8 @@
       <div
         class="labels pl-4 flex flex-col sm:flex-row sm:items-center text-xs md:text-base"
       >
-        <p>Kritische Raumproduktion</p>
+        <p>Kunst im öffentlichen Raum</p>
         <p>Spekulative Forschung</p>
-        <p>Performativer Urbanismus</p>
       </div>
     </div>
     <!--    bottom-->
@@ -51,9 +50,6 @@ export default {
 }
 </script>
 <style>
-.tag:hover {
-  border-bottom: solid 2px;
-}
 .tag {
   margin: 0 12px;
 }
