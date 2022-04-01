@@ -4,7 +4,9 @@
     style="scroll-behavior: smooth"
     @wheel="horizontalScroll($event, true)"
   >
+    <!--    <pre>{{ projectData[0] }}</pre>-->
     <div
+      v-if="projectData"
       id="slideContainer"
       class="flex-grow sm:overflow-x-scroll flex flex-col justify-center"
     >
@@ -13,15 +15,20 @@
         class="flex flex-col sm:flex-row sm:transform -translate-x-16 md:translate-x-0"
       >
         <div
-          v-for="image in images"
-          :key="image.name"
-          class="flex flex-col mx-24 mb-4 h-3/4 2xl:h-full py-20 border-r border-l"
+          v-for="project in projectData"
+          :key="project.name"
+          class="flex flex-col mx-24 mb-4 h-3/4 2xl:h-full py-20"
           :class="randomFlexPosition()"
         >
-          <nuxt-link class="relative 2xl:w-80" :to="`/projects/${image.name}`">
+          <nuxt-link
+            class="relative 2xl:w-80"
+            :to="`/projects/${project.urlName}`"
+          >
             <img
-              :src="require(`~/assets/img/${image.file}`)"
-              alt="image.name"
+              :src="
+                require(`~/assets/img/projects/${project.shortName}/${project.mainImg}`)
+              "
+              :alt="project.name"
               loading="lazy"
               width="600"
               height="800"
@@ -33,7 +40,7 @@
               class="absolute top-1/2 left-1/2 transform -translate-x-1/2 bg-white text-center whitespace-nowrap"
               style="width: 120%"
             >
-              {{ image.title }}
+              {{ project.name }}
             </div>
           </nuxt-link>
         </div>
@@ -43,67 +50,12 @@
 </template>
 <script>
 import Utils from '../utils/utils'
+import projectData from '~/static/projectsData.json'
+
 export default {
-  // components: { PictureElement },
   data() {
     return {
-      images: [
-        {
-          file: 'vimeo_metrozones.png',
-          name: 'mapping-performance&performativity',
-          title: 'Mapping, Performance & Performativity',
-          excerpt:
-            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
-          year: 2012,
-        },
-        {
-          file: 'schuppen/IMG_20190113_141422.jpg',
-          name: 'San-Rocco',
-          title: 'San Rocco',
-          excerpt:
-            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
-          year: 2012,
-        },
-        {
-          file: 'schuppen/IMG_20190113_123125.jpg',
-          name: 'schuppen',
-          title: 'Schuppen',
-          excerpt: 'Umbau eines ehemaligen Hühnerstalls und Geräteschuppen',
-          year: 2012,
-        },
-        {
-          file: 'schuppen/IMG_20181227_130937.jpg',
-          name: 'grenzen-ziehen',
-          title: 'Grenzen ziehen',
-          excerpt:
-            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
-          year: 2012,
-        },
-        {
-          file: 'schuppen/GA_Schuppen.JPG',
-          name: 'schuppen',
-          title: 'Schuppen',
-          excerpt:
-            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
-          year: 2012,
-        },
-        {
-          file: 'the_european_dream.png',
-          name: 'european-dream',
-          title: '{THE EUROPEAN DREAM}',
-          excerpt:
-            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
-          year: 2012,
-        },
-        {
-          file: 'DRAWINGS05-Highrise of Homes 1_0.jpg',
-          name: 'Highrise-of-Homes-2.0',
-          title: 'Highrise of Homes 2.0',
-          excerpt:
-            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
-          year: 2012,
-        },
-      ],
+      projectData,
     }
   },
   methods: {

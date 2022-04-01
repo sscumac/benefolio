@@ -5,14 +5,16 @@
       class="bg-normal-black items-center w-screen flex justify-between text-white py-2 px-2"
     >
       <div class="flex-grow">
-        <nuxt-link class="tag ml-3" to="/">Benedikt Stoll</nuxt-link>
+        <nuxt-link class="tag ml-3 whitespace-nowrap" to="/"
+          >Benedikt Stoll</nuxt-link
+        >
       </div>
 
       <div
-        class="labels pl-4 flex flex-col sm:flex-row sm:items-center text-xs md:text-base"
+        class="pl-4 flex flex-col sm:flex-row sm:items-center text-xs md:text-base"
       >
-        <p>Kunst im öffentlichen Raum</p>
-        <p>Spekulative Forschung</p>
+        <p class="xs:mx-2">Kunst im öffentlichen Raum</p>
+        <p class="xs:mx-2">Spekulative Forschung</p>
       </div>
     </div>
     <!--    bottom-->
@@ -51,9 +53,6 @@ export default {
 </script>
 <style>
 .tag {
-  margin: 0 12px;
-}
-.labels * {
   margin: 0 12px;
 }
 </style>

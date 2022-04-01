@@ -14,7 +14,7 @@
         class="flex flex-col sm:flex-row justify-start transform p-10"
       >
         <div class="portrait mx-auto mb-12 lg:mb-8">
-          <PictureElement path="portrait_small.jpg" width="auto" />
+          <PictureElement path="portrait_small.jpeg" width="auto" />
         </div>
         <!--        info-->
         <div class="text-box">
