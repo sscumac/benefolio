@@ -1,7 +1,11 @@
 <template>
   <div
     class="flex-grow flex flex-col"
-    style="scroll-behavior: smooth"
+    :style="{
+      backgroundImage: `url(${bgImage})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+    }"
     @wheel="horizontalScroll($event, true)"
   >
     <!--    <pre>{{ projectData[0] }}</pre>-->
@@ -17,7 +21,7 @@
         <div
           v-for="project in projectData"
           :key="project.name"
-          class="flex flex-col mx-24 mb-4 h-3/4 2xl:h-full py-20"
+          class="flex flex-col mx-24 mb-4 h-3/4 2xl:h-full py-20 slide"
           :class="randomFlexPosition()"
         >
           <nuxt-link
@@ -30,14 +34,14 @@
               "
               :alt="project.name"
               loading="lazy"
-              width="600"
+              width="800"
               height="800"
               class="mb-2"
               :style="rotateImg()"
             />
             <!--            Title on picture -->
             <div
-              class="absolute top-1/2 left-1/2 transform -translate-x-1/2 bg-white text-center whitespace-nowrap"
+              class="absolute top-1/2 left-1/2 transform -translate-x-1/2 bg-white text-center"
               style="width: 120%"
             >
               {{ project.name }}
@@ -51,11 +55,13 @@
 <script>
 import Utils from '../utils/utils'
 import projectData from '~/static/projectsData.json'
+import bgImage from '~/assets/img/grid-graph-paper-background.jpeg'
 
 export default {
   data() {
     return {
       projectData,
+      bgImage,
     }
   },
   methods: {
@@ -77,6 +83,9 @@ export default {
 #slider {
   width: 100vw;
 }
+.slide {
+  min-width: 300px;
+}
 @media (min-width: 640px) {
   #slider {
     width: 250em;
@@ -86,8 +95,5 @@ export default {
     width: 40em;
     margin-right: 5em;
   }
-}
-.img-wrapper {
-  height: fit-content;
 }
 </style>

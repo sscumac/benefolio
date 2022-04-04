@@ -1,7 +1,11 @@
 <template>
   <div
     class="flex-grow flex flex-col"
-    style="scroll-behavior: smooth"
+    :style="{
+      backgroundImage: `url(${bgImage})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+    }"
     @wheel="horizontalScroll($event, true)"
   >
     <!--    <pre>{{ projectData }}</pre>-->
@@ -11,10 +15,10 @@
     >
       <div
         id="slider"
-        class="flex flex-col my-10 sm:flex-row justify-start transform p-10"
+        class="overflow-hidden md:overflow-visible flex flex-col my-10 sm:flex-row justify-start transform p-10"
       >
         <!--                          main picture-->
-        <div class="mb-10 sm:m-20" :style="rotateImg()">
+        <div class="mb-10 sm:m-20 min-w-max" :style="rotateImg()">
           <img
             :src="
               require(`~/assets/img/projects/${projectData.shortName}/${projectData.mainImg}`)
@@ -28,7 +32,7 @@
           />
         </div>
         <!--                  text -->
-        <div class="text-box">
+        <div class="p-10 bg-white text-box">
           <h1 class="font-bold mb-4 capitalize">{{ projectData.name }}</h1>
           <div class="font-bold mb-4">{{ projectData.intro }}</div>
           <div class="">{{ projectData.text }}</div>
@@ -45,7 +49,7 @@
         <div
           v-for="(image, index) in projectData.images"
           :key="index"
-          class="flex flex-col mx-16 xs:mx-20 mb-4 h-3/4 2xl:h-full py-20 transform scale-150 sm:scale-100 sm:py-0"
+          class="min-w-max flex flex-col mx-16 xs:mx-20 mb-4 h-3/4 2xl:h-full py-20 sm:py-0 slide"
           :class="randomFlexPosition()"
         >
           <img
@@ -54,9 +58,9 @@
             "
             alt="image.name"
             loading="lazy"
-            class="mb-2"
-            height="350"
-            width="350"
+            class="mb-2 max-w-xs md:max-w-none"
+            height="600"
+            width="600"
             :style="rotateImg()"
           />
         </div>
@@ -68,11 +72,13 @@
 <script>
 import Utils from '../utils/utils'
 import projectData from '~/static/projectsData.json'
+import bgImage from '~/assets/img/grid-graph-paper-background.jpeg'
 
 export default {
   data() {
     return {
       project: this.$route.params.pathMatch,
+      bgImage,
     }
   },
   computed: {
@@ -103,11 +109,12 @@ export default {
 }
 @media (min-width: 640px) {
   #slider {
-    width: 250em;
+    width: 300em;
     /*height: 66vh;*/
   }
   .text-box {
-    width: 40em;
+    max-height: 75vh;
+    min-width: 40%;
     margin-right: 5em;
   }
 }
