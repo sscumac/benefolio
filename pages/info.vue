@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex-grow flex flex-col"
+    class="flex-grow flex flex-col pt-32 sm:pt-0"
     style="scroll-behavior: smooth"
     @wheel="horizontalScroll($event, true)"
   >

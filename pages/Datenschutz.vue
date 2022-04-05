@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex max-w-full">
+  <div class="pt-32 px-4 sm:pt-0 flex max-w-full">
     <div class="flex w-full">
       <div class="hidden mx-auto lg:block" />
       <div class="datenschutz lg:w-1/2 flex flex-col lg:ml-20">

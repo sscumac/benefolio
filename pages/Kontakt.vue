@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="pt-32 sm:pt-0">
     <p class="m-10">Kontakt</p>
     <div>
       <a class="tag" href="mailto:mail@studio.eu">mail@studio.eu</a>
