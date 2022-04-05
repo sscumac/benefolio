@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-screen">
+  <div class="max-w-screen fixed z-10 sm:static">
     <!--  top-->
     <div
       class="bg-normal-black items-center w-screen flex justify-between text-white py-2 px-2"

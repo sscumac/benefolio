@@ -1,14 +1,12 @@
 <template>
   <div
-    class="flex-grow flex flex-col"
-    :style="{
-      backgroundImage: `url(${bgImage})`,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-    }"
+    class="flex-grow flex flex-col relative pt-10 sm:pt-0"
     @wheel="horizontalScroll($event, true)"
   >
-    <!--    <pre>{{ projectData }}</pre>-->
+    <img
+      :src="bgImage"
+      class="opacity-50 fixed sm:absolute left-0 top-0 w-full h-screen xl:h-auto object-none sm:object-fill"
+    />
     <div
       id="slideContainer"
       class="flex-grow sm:overflow-x-scroll flex flex-col justify-center"
@@ -114,7 +112,7 @@ export default {
   }
   .text-box {
     max-height: 75vh;
-    min-width: 40%;
+    min-width: 66vw;
     margin-right: 5em;
   }
 }

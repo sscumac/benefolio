@@ -1,14 +1,12 @@
 <template>
   <div
-    class="flex-grow flex flex-col"
-    :style="{
-      backgroundImage: `url(${bgImage})`,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-    }"
+    class="flex-grow flex flex-col relative pt-10 sm:pt-0"
     @wheel="horizontalScroll($event, true)"
   >
-    <!--    <pre>{{ projectData[0] }}</pre>-->
+    <img
+      :src="bgImage"
+      class="fixed sm:absolute opacity-50 left-0 top-0 w-full h-screen sm:h-auto object-none sm:object-fill"
+    />
     <div
       v-if="projectData"
       id="slideContainer"
