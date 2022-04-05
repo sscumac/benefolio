@@ -19,7 +19,7 @@
         <div
           v-for="project in projectData"
           :key="project.name"
-          class="flex flex-col mx-24 mb-4 h-3/4 2xl:h-full py-20 slide"
+          class="flex flex-col mx-14 md:mx-24 mb-4 h-3/4 2xl:h-full py-20 slide"
           :class="randomFlexPosition()"
         >
           <nuxt-link
@@ -81,13 +81,13 @@ export default {
 #slider {
   width: 100vw;
 }
-.slide {
-  min-width: 300px;
-}
+
 @media (min-width: 640px) {
   #slider {
     width: 250em;
-    /*height: 66vh;*/
+  }
+  .slide {
+    min-width: 300px;
   }
   .text-box {
     width: 40em;

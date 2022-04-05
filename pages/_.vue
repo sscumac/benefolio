@@ -47,7 +47,7 @@
         <div
           v-for="(image, index) in projectData.images"
           :key="index"
-          class="min-w-max flex flex-col mx-16 xs:mx-20 mb-4 h-3/4 2xl:h-full py-20 sm:py-0 slide"
+          class="md:min-w-max flex flex-col md:mx-16 mb-4 h-3/4 2xl:h-full py-20 sm:py-0 slide"
           :class="randomFlexPosition()"
         >
           <img
@@ -56,7 +56,7 @@
             "
             alt="image.name"
             loading="lazy"
-            class="mb-2 max-w-xs md:max-w-none"
+            class="mb-2 md:max-w-none"
             height="600"
             width="600"
             :style="rotateImg()"

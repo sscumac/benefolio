@@ -2,7 +2,7 @@
   <div class="max-w-screen fixed z-10 sm:static">
     <!--  top-->
     <div
-      class="bg-normal-black items-center w-screen flex justify-between text-white py-2 px-2"
+      class="bg-normal-black items-center w-screen flex justify-between text-white py-2 pl-2 pr-6"
     >
       <div class="flex-grow">
         <nuxt-link class="tag ml-3 whitespace-nowrap" to="/"
@@ -19,7 +19,7 @@
     </div>
     <!--    bottom-->
     <div
-      class="text-normal-black items-center w-screen flex justify-end text-white px-2 py-2 tags"
+      class="text-normal-black items-center w-screen flex justify-end text-white px-4 py-2 tags"
       :class="
         $route.name === 'portfolio' || $route.name.includes('portfolio')
           ? 'bg-bright-yellow'
