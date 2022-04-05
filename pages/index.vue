@@ -5,7 +5,7 @@
   >
     <img
       :src="bgImage"
-      class="fixed sm:absolute opacity-50 left-0 top-0 w-full h-screen sm:h-auto object-none sm:object-fill"
+      class="fixed sm:absolute opacity-50 left-0 top-0 w-full h-screen xl:h-auto object-none sm:object-fill"
     />
     <div
       v-if="projectData"
