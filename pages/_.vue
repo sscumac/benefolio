@@ -33,22 +33,19 @@
         <div class="p-10 bg-white text-box">
           <h1 class="font-bold mb-4 capitalize">{{ projectData.name }}</h1>
           <div class="font-bold mb-4">{{ projectData.intro }}</div>
-          <div class="">{{ projectData.text }}</div>
+          <p v-if="projectData && projectData.text" v-html="projectData.text" />
           <div class="flex mt-10">
-            <div class="font-bold mr-2">Credits</div>
-            <div>{{ `${projectData.credits}` }}</div>
-          </div>
-          <div class="flex mt-10">
-            <div class="font-bold mr-2">Jahr</div>
-            <div>{{ `${projectData.year}` }}</div>
+            <div v-if="projectData.credits !== ''" class="font-bold mr-2">
+              Credits
+            </div>
+            <p v-html="projectData.credits" />
           </div>
         </div>
         <!--        Pictures-->
         <div
           v-for="(image, index) in projectData.images"
           :key="index"
-          class="md:min-w-max flex flex-col md:mx-16 mb-4 h-3/4 2xl:h-full py-20 sm:py-0 slide"
-          :class="randomFlexPosition()"
+          class="md:min-w-max flex flex-col justify-center md:mx-16 mb-4 h-3/4 2xl:h-full py-20 sm:py-0 slide"
         >
           <img
             :src="
@@ -56,7 +53,7 @@
             "
             alt="image.name"
             loading="lazy"
-            class="mb-2 md:max-w-none"
+            class="mb-2 md:max-w-none project-pic w-auto"
             height="600"
             width="600"
             :style="rotateImg()"
@@ -101,18 +98,30 @@ export default {
   },
 }
 </script>
-<style scoped>
+<style>
 #slider {
   width: 100vw;
 }
+.text-link {
+  font-weight: bold;
+  color: #ec2b8b;
+}
+
 @media (min-width: 640px) {
+  .project-pic {
+    max-height: 66vh;
+    height: inherit;
+  }
+
   #slider {
     width: 300em;
     /*height: 66vh;*/
   }
   .text-box {
+    height: fit-content;
     max-height: 75vh;
-    min-width: 66vw;
+    max-width: 100vw;
+    min-width: 75vw;
     margin-right: 5em;
   }
 }
