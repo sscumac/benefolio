@@ -1,8 +1,10 @@
 <template>
-  <div class="max-w-screen fixed z-10 sm:static">
+  <div
+    class="max-w-screen font-bold fixed z-10 sm:static tracking-wide text-base md:text-xl lg:text-2xl xl:text-3xl"
+  >
     <!--  top-->
     <div
-      class="bg-normal-black items-center w-screen flex justify-between text-white py-2 pl-2 pr-6"
+      class="uppercase border-t-2 border-normal-black bg-white items-center w-screen flex justify-between text-normal-black py-2 pl-2 pr-6"
     >
       <div class="flex-grow">
         <nuxt-link class="tag ml-3 whitespace-nowrap" to="/"
@@ -10,16 +12,14 @@
         >
       </div>
 
-      <div
-        class="pl-4 flex flex-col sm:flex-row sm:items-center text-xs md:text-base"
-      >
-        <p class="xs:mx-2">Kunst im öffentlichen Raum</p>
-        <p class="xs:mx-2">Spekulative Forschung</p>
+      <div class="pl-4 flex flex-col sm:flex-row sm:items-center">
+        <p class="top-tag">Kunst im öffentlichen Raum</p>
+        <p class="top-tag">Spekulative Forschung</p>
       </div>
     </div>
     <!--    bottom-->
     <div
-      class="text-normal-black items-center w-screen flex justify-end text-white px-4 py-2 tags"
+      class="border-2 border-r-0 border-l-0 border-normal-black text-normal-black items-center w-screen flex justify-end text-white px-4 py-2 tags"
       :class="
         $route.name === 'portfolio' || $route.name.includes('portfolio')
           ? 'bg-bright-yellow'
@@ -54,5 +54,16 @@ export default {
 <style>
 .tag {
   margin: 0 12px;
+}
+
+.top-tag {
+  margin-left: 8px;
+  text-align: right;
+}
+
+@media (min-width: 640px) {
+  .top-tag {
+    margin-left: 32px;
+  }
 }
 </style>
