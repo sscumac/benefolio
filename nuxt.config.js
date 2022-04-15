@@ -1,7 +1,7 @@
 import projectsData from './static/projectsData.json'
 const dynamicRoutes = () => {
   return new Promise((resolve) => {
-    resolve(projectsData.map((project) => `/projects/${project.urlName}`))
+    resolve(projectsData.map((project) => `/projects/${project.urlName}/`))
   })
 }
 
