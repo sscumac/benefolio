@@ -10,7 +10,7 @@
     <div
       v-if="projectData"
       id="slideContainer"
-      class="flex-grow sm:overflow-x-scroll flex flex-col justify-center"
+      class="flex-grow md:pt-20 sm:overflow-x-scroll flex flex-col justify-center"
     >
       <div
         id="slider"
@@ -19,8 +19,7 @@
         <div
           v-for="project in projectData"
           :key="project.name"
-          class="flex flex-col mx-14 md:mx-24 mb-4 h-3/4 2xl:h-full py-20 slide"
-          :class="randomFlexPosition()"
+          class="flex flex-col justify-center mx-14 md:mx-24 mb-4 h-3/4 2xl:h-full py-20 slide"
         >
           <nuxt-link
             class="relative 2xl:w-80"
@@ -51,7 +50,7 @@
   </div>
 </template>
 <script>
-import Utils from '../utils/utils'
+import utils from '../utils/utils'
 import projectData from '~/static/projectsData.json'
 import bgImage from '~/assets/img/grid-graph-paper-background.jpeg'
 
@@ -65,14 +64,15 @@ export default {
   methods: {
     horizontalScroll(event, bounceEffect) {
       if (window.screen.width > 500) {
-        Utils.horizontalScroll(event, bounceEffect)
+        utils.horizontalScroll(event, bounceEffect)
       }
     },
     rotateImg() {
-      return Utils.rotateImg()
+      return utils.rotateImg()
     },
     randomFlexPosition() {
-      Utils.randomFlexPosition()
+      console.log('?')
+      return utils.randomFlexPosition()
     },
   },
 }
