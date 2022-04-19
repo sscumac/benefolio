@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex-grow flex flex-col relative pt-10 sm:pt-0"
+    class="flex-grow flex flex-col relative pt-48 sm:pt-0"
     @wheel="horizontalScroll($event, true)"
   >
     <img

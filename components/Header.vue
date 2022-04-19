@@ -7,7 +7,7 @@
       class="uppercase border-t-2 border-normal-black bg-white items-center w-screen flex justify-between text-normal-black py-2 pl-2 pr-6"
     >
       <div class="flex-grow">
-        <nuxt-link class="tag ml-3 whitespace-nowrap" to="/"
+        <nuxt-link class="sm:ml-3 sm:whitespace-nowrap" to="/"
           >Benedikt Stoll</nuxt-link
         >
       </div>

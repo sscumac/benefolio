@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex-grow flex flex-col pt-32 sm:pt-0"
+    class="flex-grow flex flex-col pt-48 sm:pt-0"
     style="scroll-behavior: smooth"
     @wheel="horizontalScroll($event, true)"
   >
@@ -14,7 +14,7 @@
         class="flex flex-col sm:flex-row justify-start transform p-10"
       >
         <div class="portrait mx-auto mb-12 lg:mb-8">
-          <PictureElement path="portrait_small.jpeg" width="auto" />
+          <img :src="picture" alt="picture benedikt stoll" />
         </div>
         <!--        info-->
         <div class="text-box">
@@ -117,10 +117,13 @@
 <script>
 import Utils from '../utils/utils'
 import info from '../assets/text/info.txt'
+import picture from '../assets/img/portrait_small.jpeg'
+
 export default {
   data() {
     return {
       infoText: info,
+      picture,
     }
   },
   methods: {
