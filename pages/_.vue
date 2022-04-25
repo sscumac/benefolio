@@ -13,7 +13,7 @@
     >
       <div
         id="slider"
-        class="overflow-hidden md:overflow-visible flex flex-col my-10 sm:flex-row justify-start transform p-10"
+        class="overflow-hidden md:overflow-visible flex flex-col my-10 sm:flex-row justify-start transform p-4 sm:p-10"
       >
         <!--                          main picture-->
         <div class="mb-10 sm:m-20 min-w-max" :style="rotateImg()">
@@ -30,7 +30,7 @@
           />
         </div>
         <!--                  text -->
-        <div class="p-10 bg-white text-box">
+        <div class="sm:p-10 bg-white text-box info-text">
           <h1 class="font-bold mb-4 capitalize">{{ projectData.name }}</h1>
           <div class="font-bold mb-4">{{ projectData.intro }}</div>
           <p v-if="projectData && projectData.text" v-html="projectData.text" />
@@ -99,6 +99,9 @@ export default {
 }
 </script>
 <style>
+.info-text p {
+  padding: 1px 4px;
+}
 #slider {
   width: 100vw;
 }

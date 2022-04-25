@@ -5,6 +5,10 @@
     @wheel="horizontalScroll($event, true)"
   >
     <!--  >-->
+    <img
+      :src="bgImage"
+      class="opacity-50 fixed sm:absolute left-0 top-0 w-full h-screen xl:h-auto object-none sm:object-fill"
+    />
     <div
       id="slideContainer"
       class="flex-grow sm:overflow-x-scroll flex flex-col justify-center"
@@ -13,21 +17,31 @@
         id="slider"
         class="flex flex-col sm:flex-row justify-start transform p-10"
       >
-        <div class="portrait mx-auto mb-12 lg:mb-8">
-          <img :src="picture" alt="picture benedikt stoll" />
-        </div>
+        <img
+          class="mb-10 sm:mr-20 sm:mb-0"
+          :src="picture"
+          alt="picture benedikt stoll"
+          width="500"
+          height="500"
+        />
         <!--        info-->
-        <div class="text-box">
+        <div class="text-box-info">
           <h1 class="font-bold mb-4">Info</h1>
-          <div>{{ infoText }}</div>
+          <p v-html="infoText.text" />
           <div class="flex mt-10">
             <div class="font-bold mr-2">Kontakt</div>
-            <a class="class" href="mailto:mail@studio.eu">mail@studio.eu</a>
+            <a class="class" href="mailto:mail@benediktstoll.eu"
+              >mail@benediktstoll.eu</a
+            >
+          </div>
+          <div class="flex">
+            <div class="font-bold mr-2">Credits Foto</div>
+            <p>Simon Oberhofer</p>
           </div>
         </div>
         <!--        impressum-->
         <div>
-          <div class="text-box impressum">
+          <div class="text-box-info mt-10 sm:mt-0 impressum">
             <h1 class="font-bold mb-4">Impressum</h1>
             <p>
               Herausgeber und Autor der Website: Benedikt Stoll <br />
@@ -55,7 +69,7 @@
             </p>
           </div>
         </div>
-        <div class="text-box impressum">
+        <div class="text-box-info impressum">
           <h6>Verweise und Links</h6>
           <p>
             Bei direkten oder indirekten Verweisen auf fremde Internetseiten
@@ -80,7 +94,7 @@
             auf die jeweilige Veröffentli chung lediglich verweist.
           </p>
         </div>
-        <div class="text-box impressum">
+        <div class="text-box-info impressum">
           <h6>Urheberrecht</h6>
           <p>
             Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der
@@ -97,7 +111,7 @@
             ohne ausdrückliche Zustimmung des Autors nicht gestattet.
           </p>
         </div>
-        <div class="text-box impressum">
+        <div class="text-box-info impressum">
           <h6>Rechtswirksamkeit dieses Haftungsausschlusses</h6>
           <p>
             Dieser Haftungsausschluss ist als Teil des Internetangebotes zu
@@ -116,14 +130,16 @@
 </template>
 <script>
 import Utils from '../utils/utils'
-import info from '../assets/text/info.txt'
-import picture from '../assets/img/portrait_small.jpeg'
+import info from '../assets/text/info'
+import picture from '../assets/img/portrait_cropped.png'
+import bgImage from '~/assets/img/grid-graph-paper-background.jpeg'
 
 export default {
   data() {
     return {
       infoText: info,
       picture,
+      bgImage,
     }
   },
   methods: {
@@ -135,7 +151,16 @@ export default {
   },
 }
 </script>
-<style scoped>
+<style>
+.text-link {
+  font-weight: bold;
+  color: #ec2b8b;
+}
+
+p {
+  background-color: white;
+}
+
 #slider {
   width: 100vw;
 }
@@ -144,7 +169,7 @@ export default {
     width: 250em;
     /*height: 66vh;*/
   }
-  .text-box {
+  .text-box-info {
     width: 40em;
     margin-right: 5em;
   }

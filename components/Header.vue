@@ -30,12 +30,12 @@
           : 'bg-light-blue'
       "
     >
-      <div v-if="$route.name !== 'kontakt'">
-        <nuxt-link class="tag" to="/kontakt">Kontakt</nuxt-link>
-      </div>
+      <!--      <div v-if="$route.name !== 'kontakt'">-->
+      <!--        <nuxt-link class="tag" to="/kontakt">Kontakt</nuxt-link>-->
+      <!--      </div>-->
       <div>
         <nuxt-link class="tag" to="/info">Info</nuxt-link>
-        <nuxt-link class="tag" to="/comingsoon">ENG</nuxt-link>
+        <!--        <nuxt-link class="tag" to="/comingsoon">ENG</nuxt-link>-->
       </div>
     </div>
   </div>
