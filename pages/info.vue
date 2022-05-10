@@ -20,7 +20,8 @@
         <img
           class="mb-10 sm:mr-20 sm:mb-0"
           :src="picture"
-          alt="picture benedikt stoll"
+          title="Benedikt Stoll"
+          alt="Profile picture Benedikt Stoll"
           width="500"
           height="500"
         />
