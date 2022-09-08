@@ -37,6 +37,8 @@ module.exports = {
         'bright-yellow': '#FFF200',
         'medium-green': '#42AE48',
         'darkish-pink': '#EC2B8B',
+        kingblue: '#4169E1',
+        goldenred: '#DAA520',
       },
       screens: {
         xs: '391px',
