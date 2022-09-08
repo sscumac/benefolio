@@ -1,41 +1,81 @@
 <template>
-  <div
-    class="max-w-screen font-bold fixed z-10 sm:static tracking-wide text-base md:text-xl lg:text-2xl xl:text-3xl"
-  >
+  <div class="max-w-screen fixed z-10 sm:static tracking-wide">
     <!--  top-->
     <div
-      class="uppercase border-t-2 border-normal-black bg-white items-center w-screen flex justify-between text-normal-black py-2 pl-2 pr-6"
+      class="
+        border-t-2 border-normal-black
+        bg-white
+        items-center
+        w-screen
+        flex
+        justify-between
+        text-normal-black
+        py-2
+        pl-2
+        pr-6
+      "
     >
       <div class="flex-grow">
-        <nuxt-link class="sm:ml-3 sm:whitespace-nowrap" to="/"
+        <nuxt-link
+          class="
+            sm:ml-3 sm:whitespace-nowrap
+            font-bold
+            uppercase
+            text-base
+            md:text-xl
+            lg:text-2xl
+            xl:text-3xl
+          "
+          to="/"
           >Benedikt Stoll</nuxt-link
         >
       </div>
-
-      <div class="pl-4 flex flex-col sm:flex-row sm:items-center">
-        <p class="top-tag">Kunst im öffentlichen Raum</p>
-        <p class="top-tag">Spekulative Forschung</p>
+      <div>
+        <!--        tabs-->
+        <div
+          class="
+            whitespace-nowrap
+            flex flex-col
+            ml-4
+            lg:flex-row
+            text-xs
+            sm:text-base
+            lg:text-xl
+            xl:text-2xl
+          "
+        >
+          <div
+            v-for="(tab, index) in tabs"
+            :key="index"
+            class="justify-end flex items-center mr-2"
+            :class="firstTab(index)"
+          >
+            <p v-text="tab" />
+          </div>
+        </div>
       </div>
     </div>
     <!--    bottom-->
     <div
-      class="border-2 border-r-0 border-l-0 border-normal-black text-normal-black items-center w-screen flex justify-end text-white px-4 py-2 tags"
-      :class="
-        $route.name === 'portfolio' || $route.name.includes('portfolio')
-          ? 'bg-bright-yellow'
-          : $route.name === 'Info'
-          ? 'bg-medium-green'
-          : $route.name === 'Impressum' || $route.name === 'Datenschutz'
-          ? 'bg-darkish-pink'
-          : 'bg-light-blue'
+      class="
+        border-2 border-r-0 border-l-0 border-normal-black
+        items-center
+        w-screen
+        flex
+        justify-end
+        text-white
+        px-8
+        py-2
+        tags
+        font-bold
+        text-xl
+        lg:text-2xl
+        xl:text-3xl
       "
+      :class="headerBottomColor"
     >
-      <!--      <div v-if="$route.name !== 'kontakt'">-->
-      <!--        <nuxt-link class="tag" to="/kontakt">Kontakt</nuxt-link>-->
-      <!--      </div>-->
       <div>
         <nuxt-link class="tag" to="/info">Info</nuxt-link>
-        <!--        <nuxt-link class="tag" to="/comingsoon">ENG</nuxt-link>-->
       </div>
     </div>
   </div>
@@ -44,26 +84,33 @@
 <script>
 import utils from '../utils/utils'
 export default {
+  data() {
+    return {
+      tabs: [
+        '• Kunst im öffentl. Raum',
+        'Kunst im öffentlichen Raum',
+        '• Spekulative Forschung',
+        '• Performative Partizipation',
+      ],
+    }
+  },
+  computed: {
+    headerBottomColor() {
+      return this.$route.path === '/' ? 'bg-kingblue' : 'bg-goldenred'
+    },
+  },
   methods: {
     frameColor(route) {
       return utils.frameColor(route)
     },
+    firstTab(index) {
+      if (index === 0) {
+        return 'sm:hidden'
+      }
+      if (index === 1) {
+        return 'hidden sm:block'
+      }
+    },
   },
 }
 </script>
-<style>
-.tag {
-  margin: 0 12px;
-}
-
-.top-tag {
-  margin-left: 8px;
-  text-align: right;
-}
-
-@media (min-width: 640px) {
-  .top-tag {
-    margin-left: 32px;
-  }
-}
-</style>
