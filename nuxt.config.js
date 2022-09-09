@@ -49,10 +49,14 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/sitemap'],
 
   generate: {
     routes: dynamicRoutes,
+  },
+
+  sitemap: {
+    hostname: 'https://www.benediktstoll.eu/',
   },
 
   googleAnalytics: {
