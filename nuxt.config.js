@@ -45,11 +45,10 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/google-analytics',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/sitemap'],
+  modules: ['@nuxtjs/sitemap', '@nuxtjs/google-analytics'],
 
   generate: {
     routes: dynamicRoutes,
@@ -58,6 +57,10 @@ export default {
   sitemap: {
     hostname: 'https://www.benediktstoll.eu/',
   },
+
+  // router: {
+  //   trailingSlash: true,
+  // },
 
   googleAnalytics: {
     id: 'G-YX3QNQPX69',
