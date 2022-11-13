@@ -23,7 +23,7 @@
       id="slideContainer"
       class="
         flex-grow
-        xl:pt-28
+        md:pt-20
         sm:overflow-x-scroll
         flex flex-col
         justify-center
@@ -45,7 +45,7 @@
           class="flex flex-col mx-14 md:mx-24 mb-4 h-3/4 2xl:h-full py-20 slide"
         >
           <nuxt-link
-            class="relative 2xl:w-80 transform xl:scale-110"
+            class="relative 2xl:w-80 transform"
             :to="`/projects/${project.urlName}`"
           >
             <img
@@ -77,6 +77,7 @@
             </div>
           </nuxt-link>
         </div>
+        <div class="mb-4 h-3/4 2xl:h-full py-20 slide" />
       </div>
     </div>
   </div>
@@ -114,9 +115,6 @@ export default {
 }
 
 @media (min-width: 640px) {
-  #slider {
-    width: 250em;
-  }
   .slide {
     min-width: 300px;
   }
