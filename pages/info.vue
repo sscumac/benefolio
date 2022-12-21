@@ -7,7 +7,18 @@
     <!--  >-->
     <img
       :src="bgImage"
-      class="opacity-50 fixed sm:absolute left-0 top-0 w-full h-screen xl:h-auto object-none sm:object-fill"
+      class="
+        opacity-50
+        fixed
+        sm:absolute
+        left-0
+        top-0
+        w-full
+        h-screen
+        xl:h-auto
+        object-none
+        sm:object-fill
+      "
     />
     <div
       id="slideContainer"
@@ -152,12 +163,7 @@ export default {
   },
 }
 </script>
-<style>
-.text-link {
-  font-weight: bold;
-  color: #ec2b8b;
-}
-
+<style scoped>
 p {
   background-color: white;
 }

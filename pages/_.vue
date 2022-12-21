@@ -139,10 +139,6 @@ export default {
 #slider {
   width: 100vw;
 }
-.text-link {
-  font-weight: bold;
-  color: #ec2b8b;
-}
 
 @media (min-width: 640px) {
   .project-pic {
@@ -151,16 +147,8 @@ export default {
   }
 
   #slider {
-    width: 300em;
+    width: 425em;
     /*height: 66vh;*/
-  }
-  .text-box {
-    height: fit-content;
-    /*width: 90vw;*/
-    max-height: 75vh;
-    max-width: 100vw;
-    min-width: 90vw;
-    margin-right: 5em;
   }
 }
 </style>
