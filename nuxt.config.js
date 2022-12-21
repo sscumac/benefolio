@@ -1,4 +1,4 @@
-import projectsData from './static/projectsData.json'
+import projectsData from './static/projectsData1712.json'
 const dynamicRoutes = () => {
   return new Promise((resolve) => {
     resolve(projectsData.map((project) => `/projects/${project.urlName}/`))

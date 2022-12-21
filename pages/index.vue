@@ -49,6 +49,7 @@
             :to="`/projects/${project.urlName}`"
           >
             <img
+              v-if="project.mainImg"
               :src="
                 require(`~/assets/img/projects/${project.shortName}/${project.mainImg}`)
               "
@@ -84,7 +85,7 @@
 </template>
 <script>
 import utils from '../utils/utils'
-import projectData from '~/static/projectsData.json'
+import projectData from '~/static/projectsData1712.json'
 import bgImage from '~/assets/img/grid-graph-paper-background.jpeg'
 
 export default {

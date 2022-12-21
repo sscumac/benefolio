@@ -5,7 +5,18 @@
   >
     <img
       :src="bgImage"
-      class="opacity-50 fixed sm:absolute left-0 top-0 w-full h-screen xl:h-auto object-none sm:object-fill"
+      class="
+        opacity-50
+        fixed
+        sm:absolute
+        left-0
+        top-0
+        w-full
+        h-screen
+        xl:h-auto
+        object-none
+        sm:object-fill
+      "
     />
     <div
       id="slideContainer"
@@ -13,11 +24,22 @@
     >
       <div
         id="slider"
-        class="overflow-hidden md:overflow-visible flex flex-col my-10 sm:flex-row justify-start transform p-4 sm:p-10"
+        class="
+          overflow-hidden
+          md:overflow-visible
+          flex flex-col
+          my-10
+          sm:flex-row
+          justify-start
+          transform
+          p-4
+          sm:p-10
+        "
       >
         <!--                          main picture-->
         <div class="mb-10 sm:m-20 min-w-max" :style="rotateImg()">
           <img
+            v-if="project.mainImg"
             :src="
               require(`~/assets/img/projects/${projectData.shortName}/${projectData.mainImg}`)
             "
@@ -29,14 +51,15 @@
             :style="rotateImg()"
           />
         </div>
-        <!--                  text -->
-        <div class="sm:p-10 bg-white text-box info-text">
+
+        <!--        text-->
+        <div class="sm:p-10 bg-white text-box info-text overflow-y-scroll">
           <h1 class="font-bold mb-4 capitalize">{{ projectData.name }}</h1>
           <div class="font-bold mb-4">{{ projectData.intro }}</div>
           <p v-if="projectData && projectData.text" v-html="projectData.text" />
           <div class="flex mt-10">
             <div v-if="projectData.credits !== ''" class="font-bold mr-2">
-              Credits
+              <!--              Credits-->
             </div>
             <p v-html="projectData.credits" />
           </div>
@@ -45,9 +68,21 @@
         <div
           v-for="(image, index) in projectData.images"
           :key="index"
-          class="md:min-w-max flex flex-col justify-center md:mx-16 mb-4 h-3/4 2xl:h-full py-20 sm:py-0 slide"
+          class="
+            md:min-w-max
+            flex flex-col
+            justify-center
+            md:mx-16
+            mb-4
+            h-3/4
+            2xl:h-full
+            py-20
+            sm:py-0
+            slide
+          "
         >
           <img
+            v-if="image"
             :src="
               require(`~/assets/img/projects/${projectData.shortName}/${image}`)
             "
@@ -65,7 +100,7 @@
 
 <script>
 import Utils from '../utils/utils'
-import projectData from '~/static/projectsData.json'
+import projectData from '~/static/projectsData1712.json'
 import bgImage from '~/assets/img/grid-graph-paper-background.jpeg'
 
 export default {
@@ -121,9 +156,10 @@ export default {
   }
   .text-box {
     height: fit-content;
+    /*width: 90vw;*/
     max-height: 75vh;
     max-width: 100vw;
-    min-width: 75vw;
+    min-width: 90vw;
     margin-right: 5em;
   }
 }
