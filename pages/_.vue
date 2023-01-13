@@ -40,9 +40,7 @@
         <div class="mb-10 sm:m-20 min-w-max" :style="rotateImg()">
           <img
             v-if="project.mainImg"
-            :src="
-              require(`~/assets/img/projects/${projectData.shortName}/${projectData.mainImg}`)
-            "
+            :src="require(`~/assets/img/medium/medium_${project.mainImg}`)"
             :alt="projectData.name"
             loading="lazy"
             class="mb-2"
@@ -83,9 +81,7 @@
         >
           <img
             v-if="image"
-            :src="
-              require(`~/assets/img/projects/${projectData.shortName}/${image}`)
-            "
+            :src="require(`~/assets/img/medium/medium_${image}`)"
             alt="image.name"
             class="mb-2 md:max-w-none project-pic w-auto"
             height="600"

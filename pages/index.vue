@@ -50,9 +50,7 @@
           >
             <img
               v-if="project.mainImg"
-              :src="
-                require(`~/assets/img/projects/${project.shortName}/${project.mainImg}`)
-              "
+              :src="require(`~/assets/img/medium/medium_${project.mainImg}`)"
               :alt="project.name"
               loading="lazy"
               width="800"
