@@ -85,6 +85,7 @@
             alt="image.name"
             class="mb-2 md:max-w-none project-pic w-auto"
             height="600"
+            loading="lazy"
             width="600"
             :style="rotateImg()"
           />
