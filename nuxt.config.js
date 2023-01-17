@@ -1,4 +1,5 @@
 import projectsData from './static/projectsData1712.json'
+
 const dynamicRoutes = () => {
   return new Promise((resolve) => {
     resolve(projectsData.map((project) => `/projects/${project.urlName}/`))
@@ -59,7 +60,7 @@ export default {
   },
 
   // router: {
-  //   trailingSlash: true,
+  //   trailingSlash: false,
   // },
 
   googleAnalytics: {

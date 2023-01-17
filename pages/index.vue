@@ -112,14 +112,4 @@ export default {
 #slider {
   width: 100vw;
 }
-
-@media (min-width: 640px) {
-  .slide {
-    min-width: 300px;
-  }
-  .text-box {
-    width: 40em;
-    margin-right: 5em;
-  }
-}
 </style>
