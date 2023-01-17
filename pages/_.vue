@@ -144,12 +144,17 @@ export default {
 @media (min-width: 640px) {
   .project-pic {
     max-height: 66vh;
-    height: inherit;
   }
 
   #slider {
     width: 425em;
     /*height: 66vh;*/
+  }
+
+  @media (min-width: 1920px) {
+    #slider {
+      width: 625em;
+    }
   }
 }
 </style>
