@@ -87,10 +87,10 @@ export default {
   data() {
     return {
       tabs: [
-        '• Kunst im öffentl. Raum',
-        'Kunst im öffentlichen Raum',
+        '• Künstlerische Interventionen',
+        '• Künstlerische Interventionen',
         '• Spekulative Forschung',
-        '• Performative Partizipation',
+        '• Partizipative Gestaltung',
       ],
     }
   },
