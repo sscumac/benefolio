@@ -70,7 +70,7 @@
             md:min-w-max
             flex flex-col
             justify-center
-            md:mx-16
+            md:mx-32
             mb-4
             h-3/4
             2xl:h-full
@@ -142,10 +142,6 @@ export default {
 }
 
 @media (min-width: 640px) {
-  .project-pic {
-    max-height: 66vh;
-  }
-
   #slider {
     width: 425em;
     /*height: 66vh;*/
